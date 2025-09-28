@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku - Classic & Killer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="title">Sudoku</h1>
+      <div class="header-controls">
+        <button id="themeToggle" class="btn">Light</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div id="menuScreen" class="screen menu-screen">
+        <h2>Choose Your Game</h2>
+        <div class="menu">
+          <div class="mode-selection">
+            <button class="mode-btn active" data-mode="classic">Classic Sudoku</button>
+            <button class="mode-btn" data-mode="killer">Killer Sudoku</button>
+          </div>
+          <div class="difficulty-selection">
+            <button class="diff-btn active" data-diff="easy">Easy</button>
+            <button class="diff-btn" data-diff="medium">Medium</button>
+            <button class="diff-btn" data-diff="hard">Hard</button>
+            <button class="diff-btn" data-diff="expert">Expert</button>
+          </div>
+          <button id="startGameBtn" class="btn primary large">Start Game</button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="screen game-screen hidden">
+        <div class="game-header">
+          <button id="backToMenuBtn" class="btn">← Menu</button>
+          <div class="game-info">
+            <span id="currentMode">Classic</span> - <span id="currentDiff">Easy</span>
+          </div>
+        </div>
+
+        <div class="game-area">
+          <div class="board-container">
+            <div id="board" class="board"></div>
+            <canvas id="cageLayer" class="cage-layer"></canvas>
+          </div>
+
+          <div class="controls">
+            <div class="control-row">
+              <button id="newGameBtn" class="btn primary">New Game</button>
+              <button id="undoBtn" class="btn">Undo</button>
+              <button id="hintBtn" class="btn">Hint</button>
+            </div>
+            <div class="control-row">
+              <button id="notesToggle" class="btn" aria-pressed="false">Notes</button>
+              <button id="checkBtn" class="btn">Check</button>
+              <button id="solveBtn" class="btn">Solve</button>
+            </div>
+          </div>
+
+          <div class="numpad">
+            <button class="num-btn" data-value="1">1</button>
+            <button class="num-btn" data-value="2">2</button>
+            <button class="num-btn" data-value="3">3</button>
+            <button class="num-btn" data-value="4">4</button>
+            <button class="num-btn" data-value="5">5</button>
+            <button class="num-btn" data-value="6">6</button>
+            <button class="num-btn" data-value="7">7</button>
+            <button class="num-btn" data-value="8">8</button>
+            <button class="num-btn" data-value="9">9</button>
+            <button id="eraseBtn" class="btn erase">Erase</button>
+          </div>
+        </div>
+
+        <div class="status" id="status">Ready</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Sudoku App. Built with love.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
